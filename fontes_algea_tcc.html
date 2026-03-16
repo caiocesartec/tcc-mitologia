@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algea — Fontes Acadêmicas para TCC</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --parchment: #f4ead5;
+  --parchment-dark: #e8d9b8;
+  --parchment-edge: #d4c4a0;
+  --ink: #2c1810;
+  --ink-light: #4a3728;
+  --ink-faded: #6b5744;
+  --gold: #b8860b;
+  --gold-light: #d4a843;
+  --gold-dark: #8b6508;
+  --red-accent: #8b2500;
+  --red-light: #a0522d;
+  --blue-accent: #1a3a5c;
+  --blue-light: #2c5f8a;
+  --green-dark: #2d4a2d;
+  --border-ornate: #9e8a6a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #1a1209;
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* PARCHMENT TEXTURE */
+.parchment-bg {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(139,119,86,0.03) 28px,
+      rgba(139,119,86,0.03) 29px
+    ),
+    radial-gradient(ellipse at 20% 50%, rgba(210,180,130,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 20%, rgba(180,150,100,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 80%, rgba(160,140,100,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #f0e4cb 0%, #f4ead5 15%, #f2e6ce 50%, #efe0c4 85%, #e8d5b0 100%);
+  background-attachment: fixed;
+}
+
+/* PAGE WRAPPER */
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px 50px;
+  position: relative;
+}
+
+.hero::before {
+  content: '☽ ☀ ☾';
+  display: block;
+  font-size: 28px;
+  letter-spacing: 20px;
+  color: var(--gold);
+  margin-bottom: 30px;
+  opacity: 0.7;
+}
+
+.hero-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-shadow: 1px 1px 0 rgba(184,134,11,0.2);
+}
+
+.hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 3vw, 26px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink-faded);
+  margin-top: 12px;
+  letter-spacing: 4px;
+}
+
+.hero-greek {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 300;
+  color: var(--gold-dark);
+  margin-top: 8px;
+  letter-spacing: 12px;
+}
+
+.hero-desc {
+  max-width: 700px;
+  margin: 30px auto 0;
+  font-size: 18px;
+  color: var(--ink-light);
+  line-height: 1.9;
+  font-style: italic;
+}
+
+/* ORNAMENTAL DIVIDERS */
+.divider {
+  text-align: center;
+  margin: 50px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-ornate), transparent);
+}
+
+.divider span {
+  position: relative;
+  background: var(--parchment);
+  padding: 0 24px;
+  color: var(--gold);
+  font-size: 24px;
+  letter-spacing: 8px;
+}
+
+.greek-key {
+  height: 18px;
+  margin: 40px 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--gold) 0px, var(--gold) 6px,
+    transparent 6px, transparent 12px
+  );
+  opacity: 0.25;
+  border-radius: 1px;
+}
+
+/* IDENTIFICATION BLOCK */
+.id-block {
+  border: 2px solid var(--gold);
+  padding: 40px;
+  margin: 40px 0;
+  position: relative;
+  background: linear-gradient(135deg, rgba(184,134,11,0.04) 0%, transparent 100%);
+}
+
+.id-block::before,
+.id-block::after {
+  content: '✦';
+  position: absolute;
+  color: var(--gold);
+  font-size: 18px;
+}
+.id-block::before { top: -10px; left: 20px; background: var(--parchment); padding: 0 8px; }
+.id-block::after { bottom: -10px; right: 20px; background: var(--parchment); padding: 0 8px; }
+
+.id-label {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+}
+
+.id-value {
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(158,138,106,0.25);
+}
+
+.id-value:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.id-value.desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ink-light);
+}
+
+/* SECTION HEADERS */
+.section-header {
+  text-align: center;
+  margin: 60px 0 40px;
+}
+
+.section-number {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.section-line {
+  width: 80px;
+  height: 2px;
+  background: var(--gold);
+  margin: 16px auto 0;
+}
+
+/* SOURCE CARD */
+.source-card {
+  margin: 36px 0;
+  border: 1px solid var(--parchment-edge);
+  background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(244,234,213,0.5) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.source-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.source-card.primary::before { background: linear-gradient(90deg, var(--red-accent), var(--gold), var(--red-accent)); }
+.source-card.secondary::before { background: linear-gradient(90deg, var(--blue-accent), var(--gold-light), var(--blue-accent)); }
+.source-card.extra::before { background: linear-gradient(90deg, var(--green-dark), var(--gold-light), var(--green-dark)); }
+.source-card.warning::before { background: linear-gradient(90deg, #6b3a2a, #a0522d, #6b3a2a); }
+
+.card-header {
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid rgba(158,138,106,0.2);
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card-number {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  min-width: 45px;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-left: auto;
+}
+
+.badge-primary { background: var(--red-accent); color: #f4ead5; }
+.badge-secondary { background: var(--blue-accent); color: #f4ead5; }
+.badge-extra { background: var(--green-dark); color: #f4ead5; }
+.badge-no { background: #6b3a2a; color: #f4ead5; }
+
+.card-body {
+  padding: 24px 32px 28px;
+}
+
+.card-field {
+  margin-bottom: 18px;
+}
+
+.card-field:last-child { margin-bottom: 0; }
+
+.field-label {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 4px;
+}
+
+.field-value {
+  font-size: 16px;
+  color: var(--ink-light);
+  line-height: 1.7;
+}
+
+.field-value strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* CITATION BOX */
+.citation-box {
+  background: rgba(44,24,16,0.04);
+  border-left: 3px solid var(--gold);
+  padding: 14px 20px;
+  margin: 12px 0;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-faded);
+  font-style: italic;
+  word-break: break-word;
+}
+
+.citation-box code {
+  font-family: 'EB Garamond', serif;
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* LINK BOX */
+.link-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  margin: 8px 0;
+  background: rgba(26,58,92,0.05);
+  border: 1px solid rgba(26,58,92,0.12);
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.link-box:hover {
+  background: rgba(26,58,92,0.09);
+  border-color: rgba(26,58,92,0.25);
+}
+
+.link-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.link-label {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  min-width: 100px;
+}
+
+.link-url {
+  color: var(--blue-accent);
+  text-decoration: none;
+  font-size: 14px;
+  word-break: break-all;
+  transition: color 0.2s;
+}
+
+.link-url:hover {
+  color: var(--blue-light);
+  text-decoration: underline;
+}
+
+/* TIPS SECTION */
+.tips-block {
+  background: linear-gradient(135deg, rgba(184,134,11,0.06) 0%, rgba(139,37,0,0.03) 100%);
+  border: 1px solid var(--gold);
+  padding: 32px;
+  margin: 40px 0;
+}
+
+.tip-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.tip-item:last-child { margin-bottom: 0; }
+
+.tip-symbol {
+  font-size: 18px;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tip-text {
+  font-size: 16px;
+  color: var(--ink-light);
+  line-height: 1.7;
+}
+
+.tip-text strong {
+  color: var(--ink);
+}
+
+/* ALL LINKS SUMMARY */
+.links-summary {
+  border: 2px solid var(--blue-accent);
+  padding: 32px;
+  margin: 40px 0;
+  background: rgba(26,58,92,0.03);
+}
+
+.links-summary .field-label {
+  color: var(--blue-accent);
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 50px 20px 60px;
+  color: var(--ink-faded);
+  font-style: italic;
+  font-size: 15px;
+}
+
+.footer-ornament {
+  color: var(--gold);
+  font-size: 20px;
+  letter-spacing: 12px;
+  margin-bottom: 16px;
+}
+
+/* WARNING BOX */
+.warning-icon { color: var(--red-accent); }
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .card-header { padding: 20px; flex-direction: column; gap: 8px; }
+  .card-body { padding: 20px; }
+  .card-badge { margin-left: 0; }
+  .id-block { padding: 24px; }
+  .link-box { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .link-label { min-width: auto; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.source-card, .id-block, .tips-block, .links-summary {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.source-card:nth-child(2) { animation-delay: 0.05s; }
+.source-card:nth-child(3) { animation-delay: 0.1s; }
+.source-card:nth-child(4) { animation-delay: 0.15s; }
+</style>
+</head>
+<body class="parchment-bg">
+<div class="page-wrapper">
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1 class="hero-title">Algea</h1>
+    <p class="hero-greek">Ἄ λ γ ε α</p>
+    <p class="hero-subtitle">Fontes Acadêmicas Credenciadas para TCC</p>
+    <p class="hero-desc">
+      As personificações da dor, do sofrimento e da agonia na mitologia grega — 
+      daemones nascidas de Éris, guardiãs do limiar entre o mundo dos vivos e o Hades.
+    </p>
+  </header>
+
+  <div class="divider"><span>✦ ✦ ✦</span></div>
+
+  <!-- IDENTIFICAÇÃO -->
+  <div class="id-block">
+    <div class="id-label">Tema</div>
+    <div class="id-value">Mitologia Grega — As Algea (Ἄλγεα) / Algeia / Algos</div>
+
+    <div class="id-label">Assunto</div>
+    <div class="id-value">Personificações da dor, sofrimento e agonia na tradição grega e romana</div>
+
+    <div class="id-label">Descrição</div>
+    <div class="id-value desc">
+      As Algea (do grego Ἄλγεα; singular: Algos) são daemones (espíritos) que representam forças inevitáveis da condição humana — não são deusas com templos. Filhas de Éris (Discórdia), nascidas sem pai, conforme a <strong>Teogonia de Hesíodo (vv. 226-232)</strong>, surgem ao lado de Limos (Fome), Lethe (Esquecimento) e Phonoi (Lutas). A tríade individual cobre o espectro do sofrimento: <strong>Achos</strong> (dor aguda, choque, angústia súbita), <strong>Ania</strong> (sofrimento persistente, tristeza profunda, tédio existencial) e <strong>Lupe</strong> (agonia física, tormento da alma). Na tradição romana, são chamadas <strong>Dolores</strong> e habitam o vestíbulo do Hades como barreira metafísica e física.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FONTES PRIMÁRIAS -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-header">
+    <span class="section-number">Capítulo I</span>
+    <h2 class="section-title">Fontes Primárias</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- 1. HESÍODO -->
+  <div class="source-card primary">
+    <div class="card-header">
+      <span class="card-number">I</span>
+      <span class="card-title">Hesíodo — Teogonia (vv. 226-232)</span>
+      <span class="card-badge badge-primary">Fonte Primária Principal</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — é a melhor e mais recomendada. Fonte primária mais antiga sobre as Algea. Qualquer discussão sobre Algeia em um TCC deve se basear nela.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">O que diz</div>
+        <div class="field-value">Versos 226-232 listam as Algea como filhas de Éris, nascidas sem pai, em um rol de divindades terríveis que incluem a Fome (Limos), o Esquecimento (Lethe) e as Lutas (Phonoi).</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Autor</div>
+        <div class="field-value"><strong>Hesíodo (c. 700 a.C.)</strong> — poeta épico grego arcaico mais importante após Homero, natural da Beócia (Grécia). Autor da Teogonia, obra fundadora da mitologia grega e da cosmogonia grega. Sua autoridade é universal em estudos clássicos.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Edição Loeb (mais prestigiada do mundo)</div>
+        <div class="field-value">Revisada e traduzida por <strong>Glenn W. Most</strong> — professor de Clássicos da Universidade de Chicago e da Scuola Normale Superiore di Pisa, autor de dezenas de livros e artigos em revistas como <em>Classical Philology</em>. A Loeb Classical Library (Harvard University Press) é a série mais prestigiada do mundo desde 1912, com texto grego/latim frente a frente e traduções de professores de elite.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Edição Brasileira</div>
+        <div class="field-value">Tradução de <strong>J. A. Torrano</strong> (estudioso reconhecido de Hesíodo). São Paulo: Editora Iluminuras, 1995.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Onde Encontrar</div>
+        <div class="field-value">Bibliotecas universitárias, Skoob, Estante Virtual, Amazon, Google Books (edições com acesso limitado).</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citações ABNT</div>
+        <div class="citation-box">
+          <strong>Loeb:</strong> HESÍODO. Teogonia. In: HESÍODO. <em>Teogonia; Trabalhos e Dias; Testimonia.</em> Edição e tradução de Glenn W. Most. Cambridge: Harvard University Press, 2018. (Loeb Classical Library, v. 57).
+        </div>
+        <div class="citation-box">
+          <strong>Brasileira:</strong> HESÍODO. <em>Teogonia: A origem dos deuses.</em> Tradução, introdução e notas de J. A. Torrano. São Paulo: Editora Iluminuras, 1995.
+        </div>
+        <div class="citation-box">
+          <strong>Digital:</strong> HESÍODO. Teogonia. Perseus Digital Library. Tufts University. Disponível em: https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0130. Acesso em: 16 mar. 2026.
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Como citar no texto</div>
+        <div class="citation-box">Segundo Hesíodo (1995, p. XX), as Algea eram filhas de Éris...</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Links de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">📜</span>
+          <span class="link-label">Perseus</span>
+          <a class="link-url" href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0130" target="_blank">https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0130</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SÊNECA -->
+  <div class="source-card primary">
+    <div class="card-header">
+      <span class="card-number">II</span>
+      <span class="card-title">Sêneca — Hercules Furens</span>
+      <span class="card-badge badge-primary">Fonte Romana</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — excelente fonte romana complementar.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">O que diz</div>
+        <div class="field-value">Na literatura latina, as Algea são chamadas <strong>Dolores</strong>. Sêneca posiciona a Dor como entidade que habita o vestíbulo do Hades, servindo como barreira metafísica e física.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Autor</div>
+        <div class="field-value"><strong>Lucius Annaeus Seneca (4 a.C.–65 d.C.)</strong> — filósofo estoico romano, dramaturgo e conselheiro do imperador Nero. Suas tragédias são estudadas em todas as universidades de Clássicos e Filosofia.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Editor</div>
+        <div class="field-value"><strong>John G. Fitch</strong> — professor emérito de Clássicos e autoridade global no teatro senequiano. Edições Loeb (Harvard) são padrão global.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">
+          SÊNECA. <em>Tragedies, Volume I: Hercules, Troades, Phoenissae, Medea, Phaedra.</em> Tradução de John G. Fitch. Cambridge: Harvard University Press, 2002. (Loeb Classical Library, v. 62).
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">📕</span>
+          <span class="link-label">Loeb</span>
+          <span style="font-size:14px;color:var(--ink-faded);font-style:italic;">Edição impressa — sem link digital gratuito disponível</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. FRAGMENTOS LÍRICOS -->
+  <div class="source-card primary">
+    <div class="card-header">
+      <span class="card-number">III</span>
+      <span class="card-title">Alcman (Frag. 116) e Anacreontea (Frag. 38)</span>
+      <span class="card-badge badge-primary">Fontes Líricas</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — fontes líricas antigas com menção aos nomes individuais das Algea.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">O que dizem</div>
+        <div class="field-value">Descrevem as Algea como três entidades distintas que cobrem o espectro do sofrimento: <strong>Achos</strong> (dor aguda, choque, angústia súbita), <strong>Ania</strong> (sofrimento persistente, tristeza profunda, tédio existencial) e <strong>Lupe</strong> (agonia física, tormento da alma).</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre os Autores</div>
+        <div class="field-value">Poetas líricos gregos arcaicos — <strong>Alcman (séc. VII a.C.)</strong> e poetas da <strong>Anacreontea (séc. V-IV a.C.)</strong>.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Editor</div>
+        <div class="field-value"><strong>David A. Campbell</strong> — professor emérito da University of Victoria e autoridade máxima na compilação de fragmentos líricos gregos para a Harvard University Press.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">
+          CAMPBELL, David A. (Ed.). <em>Greek Lyric, Volume II.</em> Cambridge: Harvard University Press, 1988. (Loeb Classical Library, v. 143).
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">🔗</span>
+          <span class="link-label">Theoi</span>
+          <a class="link-url" href="https://www.theoi.com/Daimon/Algea.html" target="_blank">https://www.theoi.com/Daimon/Algea.html</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PSEUDO-HIGINO -->
+  <div class="source-card primary">
+    <div class="card-header">
+      <span class="card-number">IV</span>
+      <span class="card-title">Pseudo-Higino — Fabulae (Prefácio)</span>
+      <span class="card-badge badge-primary">Fonte Romana</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — fonte secundária romana, complementar ao Hesíodo.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">O que diz</div>
+        <div class="field-value">Compêndio mitológico que lista as Algea na genealogia divina, baseado em fontes gregas antigas.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Autor</div>
+        <div class="field-value"><strong>Higino (séc. I-II d.C.)</strong> — mitógrafo romano, bibliotecário de Augusto e autor de compêndios mitológicos. A autoridade vem da tradição helenística-romana; edições modernas (Teubner ou Loeb) são revisadas por filólogos universitários.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citações ABNT</div>
+        <div class="citation-box">
+          <strong>Edição crítica:</strong> HYGINUS. <em>Fabulae.</em> Ed. Peter K. Marshall. Stuttgart: Teubner, 1993.
+        </div>
+        <div class="citation-box">
+          <strong>Via Theoi:</strong> HIGINO (Pseudo-Higino). Fabulae (Prefácio). In: ATSMA, Aaron J. (comp.). Theoi Greek Mythology, [s.d.]. Disponível em: https://www.theoi.com/Daimon/Algea.html. Acesso em: 16 mar. 2026.
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">🔗</span>
+          <span class="link-label">Theoi</span>
+          <a class="link-url" href="https://www.theoi.com/Daimon/Algea.html" target="_blank">https://www.theoi.com/Daimon/Algea.html</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="greek-key"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FONTES SECUNDÁRIAS -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-header">
+    <span class="section-number">Capítulo II</span>
+    <h2 class="section-title">Fontes Secundárias e de Apoio</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- 5. THEOI -->
+  <div class="source-card secondary">
+    <div class="card-header">
+      <span class="card-number">V</span>
+      <span class="card-title">Theoi Project — Algea</span>
+      <span class="card-badge badge-secondary">Secundária Digital</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim, mas só como fonte secundária complementar</strong> (para localizar trechos e citações rápidas). Não serve como referência principal. Deve sempre ser cruzado com edições críticas universitárias (Loeb ou Perseus) para garantir rigor acadêmico.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Autor</div>
+        <div class="field-value"><strong>Aaron J. Atsma</strong> — criador, editor e único mantenedor do Theoi Project desde 2000. Residente entre Auckland (Nova Zelândia) e Holanda. Compilou todo o conteúdo com apoio das bibliotecas da <strong>University of Auckland</strong> e da <strong>Leiden University</strong> (Países Baixos). O site é baseado exclusivamente em traduções e citações diretas de fontes primárias antigas (Hesíodo, Higino, Sêneca etc.), com referências exatas linha a linha. Embora não possua credenciais acadêmicas formais publicadas (PhD ou cargo universitário, conforme análise de bibliotecários de clássicos em 2010), o projeto é elogiado por sua precisão filológica.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Escopo do Projeto</div>
+        <div class="field-value">Projeto estabelecido em 2000. Contém <strong>+1.500 páginas</strong> sobre deuses, espíritos, criaturas e heróis; <strong>+1.200 imagens</strong> de arte grega antiga; biblioteca de literatura clássica com trabalhos de poetas conhecidos e pouco conhecidos.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Por que é Credível</div>
+        <div class="field-value">Recomendado por universidades (aparece em guias de pesquisa de <strong>Mount Holyoke College</strong>, <strong>Henry Ford College</strong> e outras instituições). Citado em publicações acadêmicas (Scientific Research Publishing). Citado em teses (<strong>UCLA Electronic Theses, 2016</strong>). Avaliado positivamente por estudiosos. Recomendado como ferramenta de pesquisa para historiadores e classicistas.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">
+          ATSMA, Aaron J. "Algea". In: Theoi Project. Auckland, Nova Zelândia, 2011. Disponível em: https://www.theoi.com/Daimon/Algea.html. Acesso em: 16 mar. 2026.
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Como citar no texto</div>
+        <div class="citation-box">De acordo com o Theoi Project (ATSMA, 2011), as Algea eram...</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Links de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">🏛</span>
+          <span class="link-label">Algea</span>
+          <a class="link-url" href="https://www.theoi.com/Daimon/Algea.html" target="_blank">https://www.theoi.com/Daimon/Algea.html</a>
+        </div>
+        <div class="link-box">
+          <span class="link-icon">📚</span>
+          <span class="link-label">Biblioteca</span>
+          <a class="link-url" href="https://www.theoi.com/Library.html" target="_blank">https://www.theoi.com/Library.html</a>
+        </div>
+        <div class="link-box">
+          <span class="link-icon">🌐</span>
+          <span class="link-label">Site</span>
+          <a class="link-url" href="https://www.theoi.com/" target="_blank">https://www.theoi.com/</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. BRANDÃO -->
+  <div class="source-card secondary">
+    <div class="card-header">
+      <span class="card-number">VI</span>
+      <span class="card-title">Brandão — Dicionário Mítico-Etimológico</span>
+      <span class="card-badge badge-secondary">Acadêmica Brasileira</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — um dos melhores dicionários de mitologia grega em português. Obra muito respeitada que pode ser citada com segurança.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Autor</div>
+        <div class="field-value"><strong>Junito de Souza Brandão (1924-2009)</strong> — Professor Titular de Língua e Literatura Grega e Língua e Literatura Latina na <strong>PUC-Rio</strong>; docente na <strong>Universidade Santa Úrsula</strong> (RJ) e na <strong>Universidade Gama Filho</strong> (RJ); Licenciado em Letras Clássicas com formação avançada em Literatura Grega; <strong>Doutor e Livre-Docente em Literatura Grega</strong>; ministrou cursos de Mitologia Grega em diversas instituições no RJ e SP; autor de múltiplas obras reconhecidas sobre teatro grego, mitologia e filologia clássica.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre a Obra</div>
+        <div class="field-value">Primeiro tratado completo de mitologia grega com base na etimologia escrito no Brasil. Contém <strong>+2.000 verbetes</strong> sobre personagens, deuses, heróis e eventos. Usa abordagem etimológica: analisa origem dos nomes gregos e simbologia profunda. Tornou-se referência obrigatória e fundamental para amantes de mitologia, filologia e cultura clássica.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">
+          BRANDÃO, Junito de Souza. <em>Dicionário Mítico-Etimológico da Mitologia Grega.</em> Petrópolis, RJ: Editora Vozes, 2014. 772 p.
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Como citar no texto</div>
+        <div class="citation-box">De acordo com Brandão (2014, p. XX), Algea representa...</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Onde Encontrar</div>
+        <div class="field-value">Bibliotecas universitárias (acervos de estudos clássicos), Livraria Vozes (editora oficial), Amazon, Estante Virtual, Skoob, Google Books.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">📕</span>
+          <span class="link-label">Editora</span>
+          <span style="font-size:14px;color:var(--ink-faded);font-style:italic;">Obra impressa — disponível na Livraria Vozes e livrarias online</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. TORRANO -->
+  <div class="source-card secondary">
+    <div class="card-header">
+      <span class="card-number">VII</span>
+      <span class="card-title">Jaa Torrano — Análise Acadêmica Brasileira</span>
+      <span class="card-badge badge-secondary">Acadêmica BR</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — referência obrigatória no Brasil para interpretação teórica de Hesíodo.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Autor</div>
+        <div class="field-value"><strong>Prof. Dr. Jaa Torrano</strong> — Professor Titular de Língua e Literatura Grega na <strong>USP</strong>. Seu currículo Lattes atesta sua posição como o maior tradutor e pesquisador de Hesíodo no país.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">
+          TORRANO, Jaa. <em>O Pensamento Mítico no Horizonte de Arcaísmo Grego.</em> São Paulo: Annablume, 2013.
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">🎓</span>
+          <span class="link-label">Lattes</span>
+          <span style="font-size:14px;color:var(--ink-faded);font-style:italic;">http://lattes.cnpq.br — buscar por "Jaa Torrano"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. SMITH -->
+  <div class="source-card secondary">
+    <div class="card-header">
+      <span class="card-number">VIII</span>
+      <span class="card-title">Smith — Dictionary of Greek and Roman Biography</span>
+      <span class="card-badge badge-secondary">Lexicográfica</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — referência lexicográfica clássica com verbete específico sobre Algos/Algea.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Sobre o Autor</div>
+        <div class="field-value"><strong>William Smith (1813-1893)</strong></div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">
+          SMITH, William. <em>A Dictionary of Greek and Roman Biography and Mythology.</em> London: John Murray, 1844. Disponível em: https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0104. Acesso em: 16 mar. 2026.
+        </div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">📜</span>
+          <span class="link-label">Perseus</span>
+          <a class="link-url" href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0104" target="_blank">https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0104</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="greek-key"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- REPOSITÓRIOS ACADÊMICOS -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-header">
+    <span class="section-number">Capítulo III</span>
+    <h2 class="section-title">Repositórios Acadêmicos</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- 9. PERSEUS -->
+  <div class="source-card extra">
+    <div class="card-header">
+      <span class="card-number">IX</span>
+      <span class="card-title">Perseus Digital Library</span>
+      <span class="card-badge badge-extra">Repositório</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — uma das melhores opções acadêmicas. Autoridade máxima para TCC.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">O que é</div>
+        <div class="field-value">Projeto acadêmico da <strong>Tufts University</strong> (Departamento de Classical Studies), coordenado desde 1987 pelo professor <strong>Gregory Crane</strong>. Um dos maiores repositórios digitais de textos clássicos, usado por universidades de todo o mundo. Financiado por <strong>Mellon Foundation</strong> e <strong>Harvard</strong>. Biblioteca digital gratuita com textos originais + traduções revisadas por especialistas.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">🏛</span>
+          <span class="link-label">Perseus</span>
+          <a class="link-url" href="https://www.perseus.tufts.edu/hopper/" target="_blank">https://www.perseus.tufts.edu/hopper/</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. LOEB -->
+  <div class="source-card extra">
+    <div class="card-header">
+      <span class="card-number">X</span>
+      <span class="card-title">Loeb Classical Library</span>
+      <span class="card-badge badge-extra">Série Editorial</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Pode usar no TCC?</div>
+        <div class="field-value"><strong>Sim</strong> — autoridade máxima.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">O que é</div>
+        <div class="field-value">Série da <strong>Harvard University Press</strong> desde 1912, com texto grego/latim frente a frente e traduções de professores de elite (ex.: Glenn W. Most). Padrão global para citação acadêmica de textos clássicos. Ambas as edições garantem texto grego crítico, aparato filológico e tradução acadêmica de excelência.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">📚</span>
+          <span class="link-label">Loeb</span>
+          <a class="link-url" href="https://www.loebclassics.com/" target="_blank">https://www.loebclassics.com/</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="greek-key"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- OUTRAS ENCICLOPÉDIAS -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-header">
+    <span class="section-number">Capítulo IV</span>
+    <h2 class="section-title">Outros Dicionários e Enciclopédias</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="source-card extra">
+    <div class="card-header">
+      <span class="card-number">XI</span>
+      <span class="card-title">Coleman — The Dictionary of Mythology</span>
+      <span class="card-badge badge-extra">Internacional</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Credibilidade</div>
+        <div class="field-value">Obra de referência internacional sobre mitologia, mas em inglês. Aceitável se o TCC permite referências em inglês.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">COLEMAN, J. A. <em>The Dictionary of Mythology: An A-Z of Themes, Legends and Heroes.</em> Londres: Arcturus, 2007.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="source-card extra">
+    <div class="card-header">
+      <span class="card-number">XII</span>
+      <span class="card-title">Brill's New Pauly (Pauly-Wissowa)</span>
+      <span class="card-badge badge-extra">Enciclopédia</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Credibilidade</div>
+        <div class="field-value">Enciclopédia acadêmica de <strong>altíssimo nível</strong> sobre o mundo antigo. Publicação de editora acadêmica renomada (Brill). Contém informações sobre Algea, mas é cara e em inglês.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">CANCIK, Hubert; SCHNEIDER, Helmuth; LANDFESTER, Manfred; SALAZAR, Christine F.; ORTON, David E. (Eds.). <em>Brill's New Pauly: Encyclopedia of the Ancient World.</em> Leiden; Boston: Brill, 2006.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">🔗</span>
+          <span class="link-label">Brill</span>
+          <a class="link-url" href="https://referenceworks.brillonline.com/browse/brill-s-new-pauly" target="_blank">https://referenceworks.brillonline.com/browse/brill-s-new-pauly</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="source-card extra">
+    <div class="card-header">
+      <span class="card-number">XIII</span>
+      <span class="card-title">Oxford Classical Dictionary</span>
+      <span class="card-badge badge-extra">Enciclopédia</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-label">Credibilidade</div>
+        <div class="field-value">Dicionário de referência de <strong>altíssima qualidade</strong> publicado por Oxford University Press. Muito respeitado. Em inglês.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Citação ABNT</div>
+        <div class="citation-box">HORNBLOWER, Simon; SPAWFORTH, Antony; EIDINOW, Esther (Eds.). <em>The Oxford Classical Dictionary.</em> Oxford: Oxford University Press, 2012.</div>
+      </div>
+      <div class="card-field">
+        <div class="field-label">Link de Referência</div>
+        <div class="link-box">
+          <span class="link-icon">🔗</span>
+          <span class="link-label">Oxford</span>
+          <a class="link-url" href="https://oxfordre.com/classics" target="_blank">https://oxfordre.com/classics</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="greek-key"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- FONTES DESCARTADAS -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-header">
+    <span class="section-number">Aviso</span>
+    <h2 class="section-title">Fontes Descartadas</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="source-card warning">
+    <div class="card-header">
+      <span class="card-number warning-icon">⚠</span>
+      <span class="card-title">History Cooperative</span>
+      <span class="card-badge badge-no">Não Usar</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-value">Banco de dados online que <strong>fechou em maio de 2010</strong>. Era iniciativa conjunta de American Historical Association, Organization of American Historians, University of Illinois Press e National Academy Press. O artigo sobre Algea não é mais acessível de forma confiável. <strong>Fontes fechadas não são ideais para TCC</strong>, pois o avaliador não consegue verificar. Se encontrou informações úteis lá, tente rastrear em JSTOR, bibliotecas universitárias ou contato direto com universidades.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="source-card warning">
+    <div class="card-header">
+      <span class="card-number warning-icon">⚠</span>
+      <span class="card-title">Wikipédia</span>
+      <span class="card-badge badge-no">Não Usar</span>
+    </div>
+    <div class="card-body">
+      <div class="card-field">
+        <div class="field-value">Enciclopédia colaborativa editável por qualquer usuário, <strong>sem autor fixo e sem revisão por pares</strong>. Orientadores de TCC geralmente proíbem citação direta (norma ABNT e regras de universidades). Use só para pesquisa inicial ou para checar links de fontes primárias. <strong>Nunca coloque na bibliografia como referência.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="greek-key"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- RESUMO DE LINKS -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-header">
+    <span class="section-number">Referência Rápida</span>
+    <h2 class="section-title">Todos os Links</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="links-summary">
+    <div class="field-label">Links Acadêmicos — Acesso Direto</div>
+
+    <div class="link-box">
+      <span class="link-icon">📜</span>
+      <span class="link-label">Hesíodo (Perseus)</span>
+      <a class="link-url" href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0130" target="_blank">https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0130</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">🏛</span>
+      <span class="link-label">Theoi — Algea</span>
+      <a class="link-url" href="https://www.theoi.com/Daimon/Algea.html" target="_blank">https://www.theoi.com/Daimon/Algea.html</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">📚</span>
+      <span class="link-label">Theoi — Biblioteca</span>
+      <a class="link-url" href="https://www.theoi.com/Library.html" target="_blank">https://www.theoi.com/Library.html</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">🌐</span>
+      <span class="link-label">Theoi — Site</span>
+      <a class="link-url" href="https://www.theoi.com/" target="_blank">https://www.theoi.com/</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">📖</span>
+      <span class="link-label">Smith (Perseus)</span>
+      <a class="link-url" href="https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0104" target="_blank">https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0104</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">🏛</span>
+      <span class="link-label">Perseus Library</span>
+      <a class="link-url" href="https://www.perseus.tufts.edu/hopper/" target="_blank">https://www.perseus.tufts.edu/hopper/</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">📚</span>
+      <span class="link-label">Loeb Classics</span>
+      <a class="link-url" href="https://www.loebclassics.com/" target="_blank">https://www.loebclassics.com/</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">🔗</span>
+      <span class="link-label">Brill's New Pauly</span>
+      <a class="link-url" href="https://referenceworks.brillonline.com/browse/brill-s-new-pauly" target="_blank">https://referenceworks.brillonline.com/browse/brill-s-new-pauly</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">🔗</span>
+      <span class="link-label">Oxford Classics</span>
+      <a class="link-url" href="https://oxfordre.com/classics" target="_blank">https://oxfordre.com/classics</a>
+    </div>
+
+    <br>
+    <div class="field-label" style="color:var(--green-dark);">Para Aprofundamento</div>
+    <div class="link-box">
+      <span class="link-icon">🔍</span>
+      <span class="link-label">JSTOR</span>
+      <a class="link-url" href="https://www.jstor.org/" target="_blank">https://www.jstor.org/</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">🔍</span>
+      <span class="link-label">Google Scholar</span>
+      <a class="link-url" href="https://scholar.google.com/" target="_blank">https://scholar.google.com/</a>
+    </div>
+    <div class="link-box">
+      <span class="link-icon">🔍</span>
+      <span class="link-label">ResearchGate</span>
+      <a class="link-url" href="https://www.researchgate.net/" target="_blank">https://www.researchgate.net/</a>
+    </div>
+  </div>
+
+  <div class="greek-key"></div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- DICAS PARA O TCC -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-header">
+    <span class="section-number">Orientação</span>
+    <h2 class="section-title">Dicas para o TCC</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="tips-block">
+    <div class="tip-item">
+      <span class="tip-symbol">I.</span>
+      <span class="tip-text"><strong>Estrutura sugerida de citações:</strong> Parágrafo 1 → Apresente Algea com HESÍODO (fonte primária). Parágrafo 2 → Elabore com BRANDÃO (fonte acadêmica brasileira). Parágrafo 3 → Complemente com ATSMA/THEOI (fonte digital confiável).</span>
+    </div>
+    <div class="tip-item">
+      <span class="tip-symbol">II.</span>
+      <span class="tip-text"><strong>Prioridade máxima:</strong> Hesíodo (via Loeb 2018 ou Perseus) + Sêneca (Loeb). <strong>Bom apoio:</strong> Theoi Project e Pseudo-Higino. <strong>Evite:</strong> Wikipedia e History Cooperative.</span>
+    </div>
+    <div class="tip-item">
+      <span class="tip-symbol">III.</span>
+      <span class="tip-text"><strong>Prefira Brandão a Wikipedia.</strong> Brandão é um acadêmico brasileiro consagrado. Wikipedia não é fonte adequada para TCC.</span>
+    </div>
+    <div class="tip-item">
+      <span class="tip-symbol">IV.</span>
+      <span class="tip-text"><strong>Consulte seu orientador:</strong> Mostre as fontes antes de finalizar. Todo orientador tem preferências sobre quais fontes aceita.</span>
+    </div>
+    <div class="tip-item">
+      <span class="tip-symbol">V.</span>
+      <span class="tip-text"><strong>Use as três fontes em harmonia:</strong> Não dependa de apenas uma fonte. Cruzar informações de Hesíodo, Brandão e Atsma torna seu trabalho mais robusto.</span>
+    </div>
+    <div class="tip-item">
+      <span class="tip-symbol">VI.</span>
+      <span class="tip-text"><strong>Para nota alta:</strong> Prefira edições impressas ou PDFs oficiais (Loeb/Perseus) e coloque na bibliografia as edições críticas.</span>
+    </div>
+    <div class="tip-item">
+      <span class="tip-symbol">VII.</span>
+      <span class="tip-text"><strong>Verifique acesso:</strong> Antes de incluir uma fonte, certifique-se de que você consegue acessá-la para citação correta.</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-ornament">✦ ✦ ✦</div>
+    <p>Documento preparado em 16 de março de 2026</p>
+    <p>Para: Trabalho de Conclusão de Curso (TCC) sobre Mitologia Grega</p>
+  </footer>
+
+</div>
+</body>
+</html>
